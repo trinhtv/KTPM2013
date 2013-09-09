@@ -1,26 +1,28 @@
 public class test
 {
 
-	int giaipt (int a,int b){
+	static int giaipt ( int a, int b){
 		if(a ==0) return 0;
-			int x = -b/a;
+			 return -b/a;
 			//try{
-				//return x;
-				//
+				//return -b/a;
+				//catch(){
+				//return 0;
+			//}
 			//
 		
 	}
 
 	static void test1(){
 
-		int ketqua = giaipt(1,1);
+		 int ketqua = giaipt(1,1);
 		if(ketqua == -1 )
 		{
-			system.out.println("dung");
+			System.out.println("dung");
 
 		}
 		else{
-			system.out.println("sai");
+			System.out.println("sai");
 
 		}
 	}
@@ -30,11 +32,11 @@ public class test
 			
 		if(ketqua == 9 )
 		{
-			system.out.println("dung");
+			System.out.println("dung");
 
 		}
 		else{
-			system.out.println("sai");
+			System.out.println("sai");
 
 		}
 	}
@@ -44,11 +46,11 @@ public class test
 			
 		if(ketqua == 9 )
 		{
-			system.out.println("dung");
+			System.out.println("dung");
 
 		}
 		else{
-			system.out.println("sai");
+			System.out.println("sai");
 
 		}
 	}
