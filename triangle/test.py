@@ -37,8 +37,15 @@ class test_triangle(unittest.TestCase):
         
     def test_tamgiacdeu(self):
         self.assertEqual(triangle.detect_triangle(3,3,3) ,"tam giac deu")
-    def test_tamgiacdeu(self):
+        
+    def test_khongphaitamgiac(self):
         self.assertEqual(triangle.detect_triangle(2,3,6) ,"khong phai tam giac")
+
+    def test_khongphaitamgiac1(self):
+        self.assertEqual(triangle.detect_triangle(2,6,3) ,"khong phai tam giac")
+        
+    def test_khongphaitamgiac2(self):
+        self.assertEqual(triangle.detect_triangle(6,3,2) ,"khong phai tam giac")
         
     def test_loidulieu9(self):
         self.assertEqual(triangle.detect_triangle(-3,4,5) ,"du lieu khong hop le")
