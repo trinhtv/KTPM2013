@@ -8,11 +8,11 @@ import re
 import input
 
 
-var=[]                                #luu cac bien cua mang
+list_var=[]                                #luu cac bien cua mang
 ret=[]                                #luu cac string tra ve vao list
 
-vflag=False
-rflag=False
+vareflag=False
+reflag=False
 check=0
 
 
@@ -34,7 +34,7 @@ def checkdup(a):
 
 #Kiem tra cac khoang trong moi bien co bi trung nhau khong
 
-def checkvar(a):
+def checklist_var(a):
     check=0
     for arrchild in a:
         if(checkdup(arrchild)):
@@ -51,18 +51,18 @@ def checkvar(a):
 with open('input.py','r') as f:
     for line in f:
         if 'main' in line:
-            rflag=True
-        if (rflag==True) & ('return' in line):
+            reflag=True
+        if (reflag==True) & ('return' in line):
             ret.append(line.strip().lstrip("return '").rstrip("'"))
         if line.strip().startswith("'''"):
-            vflag=True
+            vareflag=True
             check=check+1
             if(check==1):
                 continue
             else:
-                vflag=False
-        if vflag:
-            var.append(map(int,re.findall(r'[0-9]+',line.strip())))
+                vareflag=False
+        if vareflag:
+            list_var.append(map(int,re.findall(r'[0-9]+',line.strip())))
 
 
 #Tim cac khoang tuong duong cua mot bien
@@ -105,10 +105,10 @@ try:
         return test
 
     if __name__=="__main__":
-        if checkvar(var)==False:
+        if checklist_var(list_var)==False:
             raise Exception("wrong input")
         else :
-            for arr in itertools.product(*findAll(var)):
+            for arr in itertools.product(*findAll(list_var)):
                 test_name='test_'+str(arr)
                 test=test_generator(*arr)
                 setattr(output,test_name,test)
